@@ -98,6 +98,31 @@ header ul li ul li a:hover {
     padding-top: 10px;
 }
 
+button.btn {
+    background: #1ed761;
+    float: right;
+    border: none;
+    color: #fff;
+    padding: 11px 15px;
+    text-transform: uppercase;
+    font-family: 'Mukta', sans-serif;
+    font-size: 16px;
+    width: 22%;
+    margin-top: 35px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+}
+
 #filter {
     background: #363636;
     background-image: url('../images/search.png'); /* Add a search icon to input */

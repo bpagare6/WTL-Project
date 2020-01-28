@@ -1,5 +1,6 @@
 const createTables = function (client)  {
-    const queryText =
+  /////////////////////jearheathrtryjy  
+  const queryText =
       `CREATE TABLE IF NOT EXISTS
         stu(
           id int PRIMARY KEY,

@@ -10,3 +10,6 @@ Work on the front-end started ...
 - Servlets
 - JSP
 - PostgreSQL DB
+
+### Installing Requirements of node
+cat requirements.txt | xargs npm install -g

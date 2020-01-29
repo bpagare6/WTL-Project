@@ -1,17 +1,19 @@
 var session = require('express-session');
 var tables=require("./tables.js")
+var storage=require("./storage.js")
+var fs=require('fs')
 const express = require('express')
 const morgan = require('morgan')
-//const mysql = require('mysql')
 const bodyParser = require('body-parser')
 const Client=require('pg').Client
 
 
+const app = express()
 
 
 const client=new Client({
     user:"postgres",
-    password:"******",
+    password:"nips@123",
     host:"localhost",
     port:5432,
     database:"postgres"
@@ -19,8 +21,6 @@ const client=new Client({
 })
 client.connect()
 .then(()=>console.log("connected"))
-.then(()=>client.query("select * from student "))
-.then(results=>console.table(results.rows))
 .catch(e=>console.log(e))
 
 
@@ -28,17 +28,15 @@ client.connect()
 tables.createTables(client)  
 
 
-// load our app server using express somehow....
-const app = express()
-
 app.use(session({
 	secret: 'secret',
 	resave: true,
 	saveUninitialized: true
 }));
 
-
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
+
 const port=3003
 app.listen(port, () => {
   console.log("Server is up and listening on 3003...")
@@ -46,14 +44,28 @@ app.listen(port, () => {
 app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
   })
- app.use(express.static('./'))
 
- app.use(morgan('short'))
+
+
+app.use(express.static('./'))
+
+app.use(morgan('short'))
 ///////////////////////// inputting a new user
- app.post('/validate', (req, res) => {
+ app.post('/newuser', (req, res,next) => {
+  console.log(req.body.file)
+
+  fs.readFile(req.body.file, function(err, data) {
+    //res.writeHead(200, {'Content-Type': 'text/html'});
+    if(err)
+    {
+      console.log(err);
+    }
+    console.log(data);
+    
+  });
    console.log("Trying to create a new user...")
    console.log("How do we get the form data???")
-
+  console.log(req.body)
   console.log("First name: " + req.body.username+req.body.passsword)
   const firstName = req.body.username
   const password = req.body.passsword
@@ -71,6 +83,32 @@ app.get('/', (request, response) => {
    })
 
 })
+
+//for uploading file
+app.post('/uploadfile',(req,res)=>{storage.uploadfile(req,res)});
+
+// app.post('/files', (req, res) => {
+//   console.log("Trying to create a new user...")
+//   console.log("How do we get the form data???")
+// console.log(req.body);
+//  console.log("First name: " + req.body.sid+req.body.id)
+//  const id = req.body.username;
+//  const sid = req.body.password;
+//  const file=req.body.file;
+
+//   const queryString = "insert into public.submission (id,sid,sub) values ($1,$2,$3)"
+//   client.query(queryString, [id,sid,file], (err, results) => {
+//     if (err) {
+//       console.log("Failed to insert new user: " + err)
+//       res.sendStatus(500)
+//       return
+//     }
+
+//     console.log("Inserted a new user with id: ", results.insertId);
+//     res.end()
+//   })
+
+// })
 //////////////////////// validating login details
 app.post('/auth', function(request, response) {
 	var username = request.body.username;

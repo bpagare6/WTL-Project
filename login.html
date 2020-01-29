@@ -47,15 +47,21 @@
                 <div class="text-center icon">
                     <span class="fa fa-html5"></span>
                 </div>
+                <form action="/uploadfile" enctype="multipart/form-data" method="POST"> 
+                    <input type="file" name="myfile" />
+                    <input type="submit" value="Upload a file"/>
+                 </form>
                 <!---728x90--->
                 <div class="content-bottom">
-                    <form action="auth" method="post">
+                    <form action="newuser" method="post"  >
                         <div class="field-group">
                             <span class="fa fa-user" aria-hidden="true"></span>
                             <div class="wthree-field">
                                 <input name="username" id="username" type="text" placeholder="Username" required />
                             </div>
+
                         </div>
+                
                         <div class="field-group">
                             <span class="fa fa-lock" aria-hidden="true"></span>
                             <div class="wthree-field">

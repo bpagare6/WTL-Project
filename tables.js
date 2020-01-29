@@ -1,6 +1,6 @@
 const createTables = function (client)  {
   /////////////////////jearheathrtryjy  
-  const queryText =
+  var queryText =
       `CREATE TABLE IF NOT EXISTS
         stu(
           id int PRIMARY KEY,
@@ -18,6 +18,22 @@ const createTables = function (client)  {
       .catch((err) => {
         console.log(err);
       });
+         queryText =
+      `CREATE TABLE IF NOT EXISTS
+        submission(
+          id int PRIMARY KEY,
+          sid int NOT NULL,
+          sub text
+        )`;
+
+    client.query(queryText)
+    .then((res) => {
+      console.log(res);
+  
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 module.exports={createTables};
 require('make-runnable');

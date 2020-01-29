@@ -8,7 +8,7 @@ var storage = multer.diskStorage({
     }
   })
    
-  var upload = multer({ storage: storage }).single('myFile');
+  var upload = multer({ storage: storage }).single('myfile');
   
   
   const uploadfile= (req,res)=> {

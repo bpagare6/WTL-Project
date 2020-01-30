@@ -12,4 +12,4 @@ Work on the front-end started ...
 - PostgreSQL DB
 
 ### Installing Requirements of node
-cat requirements.txt | xargs npm install -g
+`npm install`

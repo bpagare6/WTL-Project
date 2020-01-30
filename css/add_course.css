@@ -131,10 +131,14 @@ button.btn {
 
 #filter {
     background: #363636;
-    width: 70%; /* Full-width */
-    font-size: 20px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    margin-bottom: 12px; /* Add some space below the input */
+    width: 70%;
+    /* Full-width */
+    font-size: 20px;
+    /* Increase font-size */
+    padding: 12px 20px 12px 40px;
+    /* Add some padding */
+    margin-bottom: 12px;
+    /* Add some space below the input */
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -146,10 +150,14 @@ button.btn {
 
 #textbox {
     background: #363636;
-    width: 70%; /* Full-width */
-    font-size: 20px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    margin-bottom: 12px; /* Add some space below the input */
+    width: 70%;
+    /* Full-width */
+    font-size: 20px;
+    /* Increase font-size */
+    padding: 12px 20px 12px 40px;
+    /* Add some padding */
+    margin-bottom: 12px;
+    /* Add some space below the input */
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;

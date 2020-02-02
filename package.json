@@ -1,0 +1,33 @@
+{
+  "name": "WTL-Project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r esm src/run.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpagare6/WTL-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bpagare6/WTL-Project/issues"
+  },
+  "homepage": "https://github.com/bpagare6/WTL-Project#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "esm": "^3.2.25",
+    "express": "github:expressjs/express",
+    "pg": "^7.18.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "debug": "^4.1.1",
+    "nodemon": "^2.0.2"
+  }
+}

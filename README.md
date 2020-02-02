@@ -11,5 +11,7 @@ Work on the front-end started ...
 - JSP
 - PostgreSQL DB
 
-### Installing Requirements of node
-`npm install`
+### Requirement
+- node v12.14.1
+- npm v6.13.4
+- `npm install`

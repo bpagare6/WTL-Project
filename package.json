@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon -r esm src/run.js",
+    "start:resetdb": "FORCE_DB_RESET=true nodemon -r esm src/run.js",
+    "seeddata": "node -r esm scripts/seed_data.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

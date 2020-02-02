@@ -9,10 +9,10 @@ const models = {
   students: sequelize.import("./students"),
   courses: sequelize.import("./courses"),
   assignments: sequelize.import("./assignments"),
-  student_courses: sequelize.import("./student-courses")
-  // teacher_courses: sequelize.import("./teacher-courses"),
-  // student_assignments: sequelize.import("./student-assignments"),
-  // teacher_assignments: sequelize.import("./teacher-assignments")
+  student_courses: sequelize.import("./student-courses"),
+  teacher_courses: sequelize.import("./teacher-courses"),
+  student_assignments: sequelize.import("./student-assignments"),
+  teacher_assignments: sequelize.import("./teacher-assignments"),
 };
 
 Object.keys(models).forEach(model_name => {

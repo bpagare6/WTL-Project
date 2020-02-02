@@ -8,7 +8,6 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    score: DataTypes.INTEGER,
     deadline: DataTypes.DATE
   });
 

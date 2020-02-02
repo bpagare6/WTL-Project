@@ -4,7 +4,7 @@ import models from "./models/index";
 async function run() {
   try {
     // DB Connection
-    await models.sequelize.sync();
+    await models.sequelize.sync({ force: process.env.FORCE_DB_RESET });
     console.log("Database Connected successfully.");
 
     // Start the App in Listen Mode

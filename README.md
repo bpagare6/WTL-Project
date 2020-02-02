@@ -30,4 +30,7 @@ Tables will be created directly, you can change username and password in modesl/
 I have tried to make this structure as close to django. You can write the backend functions in controller.js
 
 ### Setup
-`npm install` this will install all necessary packages.
+- `npm install` this will install all necessary packages.
+- Then setup the database by running **Running seeddata task in npm scripts**.
+- Check your database once, it should have created sample data into the database.
+- Then run `npm start` to start the server.

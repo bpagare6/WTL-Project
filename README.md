@@ -31,4 +31,3 @@ I have tried to make this structure as close to django. You can write the backen
 
 ### Setup
 `npm install` this will install all necessary packages.
-

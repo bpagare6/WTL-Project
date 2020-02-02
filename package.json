@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/bpagare6/WTL-Project#readme",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "ejs": "^3.0.1",
     "esm": "^3.2.25",
     "express": "github:expressjs/express",

@@ -1,22 +1,37 @@
 import models from "../src/models/index";
+import bcrypt from "bcrypt";
+import config from "../src/config";
 
 /* Generate the data into database for testing purposes */
 async function seed() {
   try {
+    var hashed_password;
+    bcrypt.hash("password", config.bcrypt_salt_rounds).then(hash => {
+      hashed_password = hash;
+    });
+
     await models.sequelize.sync({ force: true });
 
     await models.students.bulkCreate([
-      { name: "Bhushan Pagare", username: "sbhushan", password: "password" },
-      { name: "Manav Peshwani", username: "smanav", password: "password" },
-      { name: "Purvesh Jain", username: "spurvesh", password: "password" },
-      { name: "Nipun Khivansara", username: "snipun", password: "password" }
+      {
+        name: "Bhushan Pagare",
+        username: "sbhushan",
+        password: hashed_password
+      },
+      { name: "Manav Peshwani", username: "smanav", password: hashed_password },
+      { name: "Purvesh Jain", username: "spurvesh", password: hashed_password },
+      {
+        name: "Nipun Khivansara",
+        username: "snipun",
+        password: hashed_password
+      }
     ]);
 
     await models.teachers.bulkCreate([
-      { name: "Teacher 1", username: "tbhushan", password: "password" },
-      { name: "Teacher 2", username: "tmanav", password: "password" },
-      { name: "Teacher 3", username: "tpurvesh", password: "password" },
-      { name: "Teacher 4", username: "tnipun", password: "password" }
+      { name: "Teacher 1", username: "tbhushan", password: hashed_password },
+      { name: "Teacher 2", username: "tmanav", password: hashed_password },
+      { name: "Teacher 3", username: "tpurvesh", password: hashed_password },
+      { name: "Teacher 4", username: "tnipun", password: hashed_password }
     ]);
 
     await models.courses.bulkCreate([

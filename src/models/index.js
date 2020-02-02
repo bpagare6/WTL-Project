@@ -1,9 +1,19 @@
 /* Main Database Models file */
 import Sequelize from "sequelize";
-const sequelize = new Sequelize("digital-classroom", "postgres", "postgres", {
-  host: "localhost",
-  dialect: "postgres"
-});
+import config from "../config";
+
+// New Database Connection
+const sequelize = new Sequelize(
+  config.database_name,
+  config.database_username,
+  config.database_password,
+  {
+    host: "localhost",
+    dialect: "postgres"
+  }
+);
+
+// Creating new models
 const models = {
   teachers: sequelize.import("./teachers"),
   students: sequelize.import("./students"),
@@ -12,7 +22,7 @@ const models = {
   student_courses: sequelize.import("./student-courses"),
   teacher_courses: sequelize.import("./teacher-courses"),
   student_assignments: sequelize.import("./student-assignments"),
-  teacher_assignments: sequelize.import("./teacher-assignments"),
+  teacher_assignments: sequelize.import("./teacher-assignments")
 };
 
 Object.keys(models).forEach(model_name => {

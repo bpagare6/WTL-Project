@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Assignment | Student</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <!-- Index-Page-CSS -->
+    <link rel="stylesheet" href="css/index.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet" />
+</head>
+
+<body>
+    <%- include('templates/nav.ejs') %>
+
+    <section class="main-content">
+        <h1 class="title">Assignment-Name</h1>
+        <input type="text" id="filter" onkeyup="myFunction()" placeholder="Search for file">
+        <table>
+            <col width="1%">
+            <col width="60%">
+            <col width="39%">
+            <tr>
+                <th></th>
+                <th>File Name</th>
+                <!-- <th class="courseid">Course ID</th> -->
+                <!-- <th style="text-align: right; padding-right: 15px;">Credits</th> -->
+                <th style="text-align: center; padding-right: 15px;">Status</th>
+            </tr>
+            <tr>
+                <td class="icon"><i class="fa fa-address-book"></i></td>
+                <td>FILE1.html</td>
+                <!-- <td class="courseid">CS-101</td>
+                <td class="credits">4</td> -->
+                <td class="students" style="text-align: center; padding-right: 15px;">Submitted</td>
+            </tr>
+            <tr>
+                <td class="icon"><i class="fa fa-address-book"></i></td>
+                <td>FILE2.html</td>
+                <!-- <td class="courseid">CS-201</td>
+                <td class="credits">4</td> -->
+                <td class="students" style="text-align: center; padding-right: 15px;">Pending</td>
+            </tr>
+            <tr>
+                <td class="icon"><i class="fa fa-address-book"></i></td>
+                <td>Object Oriented Programming</td>
+                <!-- <td class="courseid">CS-102</td>
+                <td class="credits">4</td> -->
+                <td class="students" style="text-align: center; padding-right: 15px;">120</td>
+            </tr>
+            <tr>
+                <td class="icon"><i class="fa fa-address-book"></i></td>
+                <td>Web Technology</td>
+                <!-- <td class="courseid">CS-301</td>
+                <td class="credits">3</td> -->
+                <td class="students" style="text-align: center; padding-right: 15px;">92</td>
+            </tr>
+            <tr>
+                <td class="icon"><i class="fa fa-address-book"></i></td>
+                <td>Design & Analysis of Algorithms</td>
+                <!-- <td class="courseid">CS-302</td>
+                <td class="credits">3</td> -->
+                <td class="students" style="text-align: center; padding-right: 15px;">65</td>
+            </tr>
+            <tr>
+                <td class="icon"><i class="fa fa-address-book"></i></td>
+                <td>Internet of Things</td>
+                <!-- <td class="courseid">CS-303</td>
+                <td class="credits">4</td> -->
+                <td class="students" style="text-align: center; padding-right: 15px;">101</td>
+            </tr>
+            <tr>
+                <td class="icon"><i class="fa fa-address-book"></i></td>
+                <td>Machine Learning</td>
+                <!-- <td class="courseid">CS-401</td>
+                <td class="credits">4</td> -->
+                <td class="students" style="text-align: center; padding-right: 15px;">205</td>
+            </tr>
+            <tr>
+                <td class="icon"><i class="fa fa-address-book"></i></td>
+                <td>Quantam Computing</td>
+                <!-- <td class="courseid">CS-402</td>
+                <td class="credits">3</td> -->
+                <td class="students" style="text-align: center; padding-right: 15px;">45</td>
+            </tr>
+        </table>
+        <div class="div1" style="align-items: center; padding-right: 200px;">
+            <button type="submit" class="btn"><i class="fa fa-plus"></i> Upload new file</button>
+            <button type="submit" class="btn" style="margin-right: 20%;">Write some code</button>
+        </div>
+
+    </section>
+</body>
+
+</html>

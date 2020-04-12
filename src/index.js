@@ -5,8 +5,10 @@ import other_routes from "./routes/other";
 import student_routes from "./routes/student";
 import teacher_routes from "./routes/teacher";
 const app = express();
+const session = require('express-session');
 
 app.set("view engine", "ejs");
+app.use(session({secret: 'itsverysecret', saveUninitialized: true, resave: true}));
 
 app.use("/css", express.static(path.join("public", "css")));
 app.use("/images", express.static(path.join("public", "images")));

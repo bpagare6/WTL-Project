@@ -11,13 +11,29 @@ route.get("/login", (req, res) => {
 });
 
 route.post("/auth", (req, res) => {
+  var sess;
+  sess = req.session;
   users.authenticate_user(req.body).then(result => {
     if (result) {
-      res.send("<h1>User Validated</h1>");
+      sess.user = req.body.username;
+      if (sess.user) {
+        res.locals.user = req.session.user;
+        res.render("student-course");
+      }
+      res.redirect('/');
     } else {
-      res.send("<h1>Error while validation</h1>");
+      res.redirect('/');
     }
   });
+});
+
+route.get("/logout", (req, res) => {
+  if (req.session) {
+    req.session.destroy();
+    res.redirect('/login');
+  } else {
+    res.redirect('/login');
+  }
 });
 
 export default route;

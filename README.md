@@ -34,3 +34,17 @@ I have tried to make this structure as close to django. You can write the backen
 - Then setup the database by running **Running seeddata task in npm scripts**.
 - Check your database once, it should have created sample data into the database.
 - Then run `npm start` to start the server.
+
+### To DO
+- [x] Login Module
+- [x] Profile Name
+- [x] Logout Module
+- [ ] Show Courses
+- [ ] Show Assignments
+- [ ] Add Course
+- [ ] Add Assignment
+- [ ] Upload Assignment
+
+### Future work
+- [ ] Add evaluation
+- [ ] Add live execution
